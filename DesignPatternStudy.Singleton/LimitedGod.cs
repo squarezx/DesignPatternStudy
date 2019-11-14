@@ -39,6 +39,10 @@ namespace DesignPatternStudy.Singleton
         {
         }
 
+        /// <summary>
+        /// 静态构造函数用于初始化任何静态数据，或执行仅需执行一次的特定操作。
+        /// 将在创建第一个实例或引用任何静态成员之前自动调用静态构造函数。
+        /// </summary>
         static LimitedGod()
         {
             for (int i = 0; i < _maxNumGod; i++)
@@ -50,7 +54,7 @@ namespace DesignPatternStudy.Singleton
         public static LimitedGod Instance()
         {
             Random random = new Random();
-            return _limitedGods[random.Next(2)];
+            return _limitedGods[random.Next(3)];
         }
 
         public void Say()
