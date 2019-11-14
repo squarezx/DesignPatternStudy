@@ -1,12 +1,22 @@
 ﻿using System;
+using System.Threading.Tasks;
 
 namespace DesignPatternStudy.Singleton
 {
-    class Program
+    internal class Program
     {
-        static void Main(string[] args)
+        private static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            for (int i = 0; i < 10; i++)
+            {
+                Task.Run(() =>
+                {
+                    LimitedGod god = LimitedGod.Instance();
+                    god.Say();
+                });
+            }
+
+            Console.Read();
         }
     }
 }

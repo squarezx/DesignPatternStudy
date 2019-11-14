@@ -2,11 +2,17 @@
 
 namespace DesignPatternStudy.SimpleFactory
 {
-    class Program
+    internal class Program
     {
-        static void Main(string[] args)
+        private static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            for (int i = 0; i < 5; i++)
+            {
+                God god = God.Instance();
+                god.Say();
+            }
+
+            Console.Read();
         }
     }
 }
